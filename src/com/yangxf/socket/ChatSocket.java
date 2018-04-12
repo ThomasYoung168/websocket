@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.websocket.OnClose;
+import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
@@ -60,5 +61,10 @@ public class ChatSocket {
 		msg2.setUsernames(this.names);
 		
 		broadcast(this.sessions, msg2.toJson());
+	}
+	
+	@OnMessage
+	public void message(Session sesion,String msg) {
+		
 	}
 }

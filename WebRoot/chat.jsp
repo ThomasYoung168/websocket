@@ -44,6 +44,12 @@
 				}
 			}
 		}
+		
+		function subSend(){
+			var val = $("#msg2").val();
+			ws.send(val);
+			$("#msg2").val("");
+		}
 	</script>
   </head>
   
@@ -52,7 +58,7 @@
   	<div id="container" style="border:1px solid black; width:400px; height:400px; float:left;">
 	    <div id="content" style="height:350px;"></div>
 	    <div style="border-top:1px solid black; width:100px; height:400px;">
-	    	<input id="msg2" /><button>发送</button>
+	    	<input id="msg2" /><button onclick="subSend();">发送</button>
 	    </div>
     </div>
     <div id="userList" style="border: 1px solid black; width:100px; height: 400px; float: left;"></div>
